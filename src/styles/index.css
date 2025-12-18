@@ -9,3 +9,32 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body {
+    background-color: darkgrey;
+}
+
+.listPaper {
+    background-color: white;
+    width: 30%;
+    min-height: 50px;
+    border-radius: 2px;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.329);
+}
+.input {
+    border: none;
+    font-size: large;
+}
+.items{
+    border-bottom: 1px solid rgba(163, 163, 163, 0.712);
+    font-size: large;
+    color: rgb(44, 44, 44);
+}
+.items:first-child{
+    border-top: 1px solid rgba(163, 163, 163, 0.712)
+}
+.delete{
+    opacity: 0;
+}
+.items:hover .delete{
+    opacity: 1;
+}
