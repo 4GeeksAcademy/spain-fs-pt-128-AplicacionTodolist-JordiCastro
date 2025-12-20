@@ -9,14 +9,17 @@ const Home = () => {
 
 	const handleKeyUp = (e) => {
 		if (e.key === "Enter") {
-			setListToDo([...listToDo, e.target.value])
-			e.target.value = "";
+			if (e.target.value !== "") {
+				setListToDo([...listToDo, e.target.value])
+				e.target.value = "";
+			}
+
 		}
 	}
 	const deleteBtn = (deleteIndex) => {
 		setListToDo(listToDo.filter((item, index) => index !== deleteIndex));
 	}
-	
+
 	return (
 		<div className="text-center">
 			<h1 className="my-5">ToDo List</h1>
@@ -33,9 +36,9 @@ const Home = () => {
 						return (
 							<div key={index} className="pb-2 my-3 items d-flex justify-content-between">
 								<div className=""><i class="fa-solid fa-circle-dot"></i> {listItem}</div>
-								<button className="btn delete" 
-								onClick={() => deleteBtn(index)}								
-								>X</button>					
+								<button className="btn delete"
+									onClick={() => deleteBtn(index)}
+								>X</button>
 							</div>
 						);
 					})
